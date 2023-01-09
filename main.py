@@ -2,7 +2,9 @@ import streamlit as st
 from lyricsgenius import Genius
 from transformers import pipeline
 from tqdm import tqdm
-genius = Genius('MaqKi8XxAuUa3JIrN7IjtTfN4tWXz4qHbRwA7PQeIwZBO0cJI8Ridy4ilUFhpuG_')
+from TOKEN import *
+
+genius = Genius(TOKEN)
 
 @st.cache(allow_output_mutation=True)
 def load_model():
@@ -22,14 +24,13 @@ def get_lyrics(song_name):
     
     lyrics = [r for r in lyrics if '[' not in r]
     print('translating_song')
-    res = presict(lyrics)
-#     for row in tqdm(lyrics, desc='Translating song'):
-#         if '[' in row:
-#             res += row
-#             res += '\n'
-#         else:
-#             res += predict(row)
-#             res += '\n'
+    for row in tqdm(lyrics, desc='Translating song'):
+        if '[' in row:
+            res += row
+            res += '\n'
+        else:
+            res += predict(row)
+            res += '\n'
     return res
 
 st.title('Перевод песен Genius')
