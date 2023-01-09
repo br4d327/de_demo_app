@@ -21,6 +21,7 @@ def get_lyrics(song_name):
     res = ''
     
     lyrics = [r for r in lyrics if '[' not in r]
+    print('translating_song')
     res = presict(lyrics)
 #     for row in tqdm(lyrics, desc='Translating song'):
 #         if '[' in row:
