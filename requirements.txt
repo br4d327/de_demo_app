@@ -6,3 +6,4 @@ lyricsgenius==3.0.1
 transformers==4.11.3
 tensorflow-cpu
 sentencepiece==0.1.96
+tqdm
