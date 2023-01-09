@@ -1,4 +1,6 @@
 requests
+re
+beautifulsoup4
 streamlit==1.16.0
 lyricsgenius==3.0.1
 transformers==4.11.3
