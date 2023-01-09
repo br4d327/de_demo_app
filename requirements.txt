@@ -1,3 +1,4 @@
 streamlit
 lyricsgenius
 transformers
+tensorflow-cpu
