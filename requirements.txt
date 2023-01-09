@@ -2,3 +2,4 @@ streamlit
 lyricsgenius
 transformers
 tensorflow-cpu
+sentencepiece
