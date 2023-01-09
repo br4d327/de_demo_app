@@ -2,17 +2,20 @@ import streamlit as st
 from lyricsgenius import Genius
 from transformers import pipeline
 
-genius = Genius(st.secrets['TOKEN'])
+genius = Genius('MaqKi8XxAuUa3JIrN7IjtTfN4tWXz4qHbRwA7PQeIwZBO0cJI8Ridy4ilUFhpuG_')
 
-pipe = pipeline("translation", model="Helsinki-NLP/opus-mt-en-ru")
+@st.cache(allow_output_mutation=True)
+def load_model():
+    pipe = pipeline("translation", model="Helsinki-NLP/opus-mt-en-ru")
+    return pipe
 
+pipe = load_model() 
 def predict(text):
     return pipe(text)[0]["translation_text"]
 
 
 def get_lyrics(song_name):
-    song = genius.song(3691324)
-    print(song)
+    song = genius.search_song(song_name)
     lyrics = song.lyrics[song.lyrics.find('Lyrics')+6:]
     lyrics = lyrics.split('\n')
     res = ''
