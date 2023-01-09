@@ -69,7 +69,7 @@ song_name = st.text_input('Введите название песни с Genius'
 result = st.button('Перевести')
 
 if result:
-    r = requests.get(f'https://twitch.tv'')
+    r = requests.get(f'https://twitch.tv')
     st.write(r)
     path = genius.song(r.json()['response']['sections'][0]['hits'][0]['result']['api_path'].split('/')[-1])
     
