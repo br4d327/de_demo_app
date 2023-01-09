@@ -1,6 +1,9 @@
 import streamlit as st
+import requests
 from lyricsgenius import Genius
 from transformers import pipeline
+from bs4 import BeautifulSoup
+import re
 
 genius = Genius(st.secrets['TOKEN'])
 
