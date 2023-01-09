@@ -10,8 +10,8 @@ def predict(text):
     return pipe(text)[0]["translation_text"]
 
 
-def get_lyrics(song_name):
-    song = genius.search_song(song_name)
+def get_lyrics(song_name, artist_name):
+    song = genius.search_song(song_name, artist_name)
     lyrics = song.lyrics[song.lyrics.find('Lyrics')+6:]
     lyrics = lyrics.split('\n')
     res = ''
@@ -27,8 +27,9 @@ def get_lyrics(song_name):
 
 st.title('Перевод песен Genius')
 song_name = st.text_input('Введите название песни с Genius')
+artist_name = st.text_input('Введите артиста песни Genius')
 result = st.button('Перевести')
 if result:
-    preds = get_lyrics(song_name)
+    preds = get_lyrics(song_name, artist_name)
     st.write('**Результаты перевода:**')
     st.write(preds)
