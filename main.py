@@ -2,7 +2,7 @@ import streamlit as st
 from lyricsgenius import Genius
 from transformers import pipeline
 
-genius = Genius(token)
+genius = Genius(TOKEN)
 
 pipe = pipeline("translation", model="Helsinki-NLP/opus-mt-en-ru")
 
