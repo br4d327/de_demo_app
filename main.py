@@ -24,8 +24,6 @@ def get_lyrics(song_name):
             res += predict(row)
             res += '\n'
     return res
-    
-result = get_lyrics("Praise the Lord (Da Shine)")
 
 st.title('Перевод песен Genius')
 song_name = st.text_input('Введите название песни с Genius')
