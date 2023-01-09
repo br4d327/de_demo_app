@@ -70,6 +70,7 @@ result = st.button('Перевести')
 
 if result:
     r = requests.get(f'https://genius.com/api/search/multi?q={song_name}')
+    st.write(r.json()['response']['sections'][0]['hits'][0]['result']['api_path'].split('/')[-1])
     path = genius.song(r.json()['response']['sections'][0]['hits'][0]['result']['api_path'].split('/')[-1])
     
     web_root += path
