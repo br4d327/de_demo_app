@@ -12,6 +12,7 @@ def predict(text):
 
 def get_lyrics(song_name):
     song = genius.song(3691324)
+    print(song)
     lyrics = song.lyrics[song.lyrics.find('Lyrics')+6:]
     lyrics = lyrics.split('\n')
     res = ''
