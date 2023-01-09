@@ -1,7 +1,8 @@
 import streamlit as st
 from lyricsgenius import Genius
 from transformers import pipeline
-
+st.write(st.secrets['TOKEN'])
+st.write(st.secrets.TOKEN)
 genius = Genius(st.secrets['TOKEN'])
 
 pipe = pipeline("translation", model="Helsinki-NLP/opus-mt-en-ru")
