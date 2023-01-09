@@ -26,17 +26,17 @@ def get_lyrics(song_name):
     print('translating_song')
     for row in tqdm(lyrics, desc='Translating song'):
         if '[' in row:
-            res += row
-            res += '\n'
+            st.write(row)
         else:
-            res += predict(row)
-            res += '\n'
-    return res
+            st.write(predict(row))
 
 st.title('Перевод песен Genius')
 song_name = st.text_input('Введите название песни с Genius')
 result = st.button('Перевести')
+
 if result:
-    preds = get_lyrics(song_name)
-    st.write('**Результаты перевода:**')
-    st.write(preds)
+	st.write("перевод:")
+	get_lyrics(song_name)
+	st.write("Done.")
+  
+ 
