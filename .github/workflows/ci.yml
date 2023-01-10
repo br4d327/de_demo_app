@@ -31,6 +31,8 @@ jobs:
     - shell: bash
       env:
         TOKEN: ${{ secrets.TOKEN }}
+      run: |
+        echo $TOKEN
     - name: Pytest start
       run: |
         pwd
