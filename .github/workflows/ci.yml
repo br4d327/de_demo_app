@@ -16,7 +16,7 @@ jobs:
       name: Configure secrets
       env:
         TOKEN: ${{secrets.TOKEN}}
-      run:
+      run: |
         import os
         TOKEN = os.environ['TOKEN']
     - uses: actions/checkout@v2
