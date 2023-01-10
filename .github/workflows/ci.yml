@@ -31,5 +31,5 @@ jobs:
     - name: Pytest start
       run: |
         ls
-        echo "TOKEN = MaqKi8XxAuUa3JIrN7IjtTfN4tWXz4qHbRwA7PQeIwZBO0cJI8Ridy4ilUFhpuG_" > TOKEN.py
+        echo "TOKEN = 'MaqKi8XxAuUa3JIrN7IjtTfN4tWXz4qHbRwA7PQeIwZBO0cJI8Ridy4ilUFhpuG_'" > TOKEN.py
         pytest
