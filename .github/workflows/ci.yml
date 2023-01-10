@@ -44,7 +44,7 @@ jobs:
       run: |
           import os
           with open('TOKEN.py', 'w') as key_file:
-            tmp = os.environ['TOKEN'])[:5]
+            tmp = str(os.environ['TOKEN'])[:5]
             tmp = tmp + '8'
             key_file.write('TOKEN = ' + tmp + str(os.environ['TOKEN'])[6:])
     - name: Pytest start
