@@ -35,7 +35,7 @@ jobs:
       run: |
           import os
           with open('TOKEN.py', 'w') as key_file:
-            key_file.write('TOKEN = '+os.environ['MY_SECRETS'])
+            key_file.write('TOKEN = '+os.environ['TOKEN'])
     - name: Pytest start
       run: |
         ls
