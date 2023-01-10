@@ -3,6 +3,7 @@ from lyricsgenius import Genius
 from transformers import pipeline
 from tqdm import tqdm
 #from TOKEN import *
+import os
 
 # Функции
 # Загрузка модели
