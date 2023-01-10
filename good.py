@@ -70,7 +70,7 @@ def cheak_input(input_str):
 configure()
 
 # genius init
-genius = Genius(dotenv_load(os.getenv('TOKEN')))
+genius = Genius(os.getenv('TOKEN'))
 
 # load model into pipeline
 pipe = load_model()
