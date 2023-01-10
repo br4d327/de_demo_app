@@ -14,7 +14,7 @@ jobs:
     steps:
     - name: Configure secrets
       run: |
-        echo ${{secrets.TOKEN}} > TOKEN.py
+        echo ${{secrets.TOKEN}} > /home/runner/work/de_demo_app/de_demo_app/TOKEN.py
         cat TOKEN.py
     - uses: actions/checkout@v2
     - name: Set up Python 3.7
