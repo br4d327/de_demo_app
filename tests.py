@@ -16,8 +16,8 @@ def test_predict(a, b):
 
 
 pipe = None
-dict_test = {'Hello': 'Привет.'
-    , 'I love you': 'Я люблю тебя.'
+dict_test = {'Hello': 'Здравствуйте.'
+    , 'I love you': 'Я люблю тебя'
     , 'Hot summer nights': 'Горячие летние ночи'
     , 'The crazy days, city lights': 'Сумасшедшие дни, городские огни'
     , "I'll be back": 'Я вернусь.'
