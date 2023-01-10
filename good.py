@@ -2,7 +2,7 @@ import streamlit as st
 from lyricsgenius import Genius
 from transformers import pipeline
 from tqdm import tqdm
-from TOKEN import *
+#from TOKEN import *
 
 # Функции
 # Загрузка модели
@@ -62,6 +62,7 @@ def cheak_input(input_str):
         st.error('Поле пустое')
 
 # Токен
+TOKEN = os.environ['TOKEN']
 genius = Genius(TOKEN)
 
 # Загрузка модели в pipeline
