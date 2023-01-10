@@ -1,21 +1,20 @@
-import main
+import good
 import pytest
 
 
 # Тест load_model
 def test_load_model():
-    pipe = main.load_model()
-    assert pipe.tokenizer.name_or_path == 'Helsinki-NLP/opus-mt-en-ru', 'Helsinki-NLP/opus-mt-en-ru'
-    assert pipe.tokenizer.vocab_size == 62518, '62518'
-    assert pipe.tokenizer.model_max_length == 512, '512'
+    pipe = good.load_model()
+    assert good.load_model().tokenizer.name_or_path == 'Helsinki-NLP/opus-mt-en-ru', 'Helsinki-NLP/opus-mt-en-ru'
+    assert good.load_model().tokenizer.vocab_size == 62518, '62518'
+    assert good.load_model().tokenizer.model_max_length == 512, '512'
 
 # Тест predict
 def test_predict():
     for key in dict_test.keys():
-        assert main.predict(key) == dict_test[key]
+        assert good.predict(key) == dict_test[key]
 
 
-pipe = None
 dict_test = {'Hello': 'Здравствуйте.'
     , 'I love you': 'Я люблю тебя'
     , 'Hot summer nights': 'Горячие летние ночи'
