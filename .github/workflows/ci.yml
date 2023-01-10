@@ -33,4 +33,5 @@ jobs:
         TOKEN: ${{ secrets.TOKEN }}
     - name: Pytest start
       run: |
+        pwd
         pytest
