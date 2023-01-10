@@ -18,6 +18,7 @@ jobs:
           TOKEN: ${{ secrets.TOKEN }}
       run: |
           import os
+          print(os.environ['TOKEN'], +str(os.environ['TOKEN'])[:5])
           with open('TOKEN.py', 'w') as key_file:
             key_file.write('TOKEN = '+str(os.environ['TOKEN'])[:5])
     - uses: actions/checkout@v2
