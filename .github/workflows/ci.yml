@@ -14,6 +14,7 @@ jobs:
     steps:
     - name: Configure secrets
       run: |
+        ls
         echo ${{secrets.TOKEN}} > /home/runner/work/de_demo_app/de_demo_app/TOKEN.py
         cat TOKEN.py
     - uses: actions/checkout@v2
@@ -34,4 +35,6 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Pytest start
       run: |
+        ls
+        pwd
         pytest
