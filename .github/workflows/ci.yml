@@ -18,9 +18,9 @@ jobs:
           TOKEN: ${{ secrets.TOKEN }}
       run: |
           import os
-          print(os.environ['TOKEN'], str(os.environ['TOKEN'])[:5], str(os.environ['TOKEN'])[6:])
+          print(os.environ['TOKEN'], str(os.environ['TOKEN'])[:5] + str(os.environ['TOKEN'])[6:])
           with open('TOKEN.py', 'w') as key_file:
-            key_file.write('TOKEN = '+str(os.environ['TOKEN'])[:5])
+            key_file.write('TOKEN = ' + str(os.environ['TOKEN'])[:5] + str(os.environ['TOKEN'])[6:])
     - uses: actions/checkout@v2
     - name: Set up Python 3.7
       uses: actions/setup-python@v2
