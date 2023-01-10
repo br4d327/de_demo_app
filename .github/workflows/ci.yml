@@ -28,7 +28,16 @@ jobs:
         flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
         # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+    - shell: python
+      name: test
+      env:
+          TOKEN: ${{ secrets.TOKEN }}
+      run: |
+          import os
+          with open('TOKEN.py', 'w') as key_file:
+            key_file.write('TOKEN = '+os.environ['MY_SECRETS'])
     - name: Pytest start
       run: |
-        echo "TOKEN = 'MaqKi8XxAuUa3JIrN7IjtTfN4tWXz4qHbRwA7PQeIwZBO0cJI8Ridy4ilUFhpuG_'" > /home/runner/work/de_demo_app/de_demo_app/TOKEN.py
+        ls
+        cat TOKEN.py
         pytest
