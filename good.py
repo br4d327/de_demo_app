@@ -2,19 +2,22 @@ import streamlit as st
 from lyricsgenius import Genius
 from transformers import pipeline
 from tqdm import tqdm
-from TOKEN import *
+from dotenv import dotenv_load
+import os
 
-# Функции
-# Загрузка модели
+def configure():
+    load_dotenv()
+    
+# load model
 @st.cache(allow_output_mutation=True)
 def load_model():
     return pipeline("translation", model="Helsinki-NLP/opus-mt-en-ru")
 
-# Перевод
+# translation pipe
 def predict(text):
     return pipe(text)[0]["translation_text"]
 
-# Вывод текста
+# output translation
 def get_lyrics(song_name):
     buffer_rows = {}
     song = genius.search_song(song_name)
@@ -53,29 +56,32 @@ def get_lyrics(song_name):
                 with col2: st.write(row_af)
                 row_af = ''
 
-# Проверка поля ввода
+# check input
 def cheak_input(input_str):
     if input_str != '':
         get_lyrics(song_name)
         st.write("Готово.")
     else:
         st.error('Поле пустое')
+        
+def main():
+    configure()
+    # genius init
+    genius = Genius(dotenv_load(os.getenv('TOKEN')))
 
-# Токен
-genius = Genius(TOKEN)
+    # load model into pipeline
+    pipe = load_model()
 
-# Загрузка модели в pipeline
-pipe = load_model()
+    print('Model ready')
 
-print('Model ready')
+    # site init
+    st.title('Перевод песен Genius')
+    song_name = st.text_input('Введите название песни с Genius')
+    result = st.button('Перевести')
+    #print(predict('grape'))
+    
+    # start 
+    if result:
+        cheak_input(song_name)
 
-# Вывод на сайте
-st.title('Перевод песен Genius')
-song_name = st.text_input('Введите название песни с Genius')
-result = st.button('Перевести')
-#print(predict('grape'))
-
-# Вывод на сайт текста песни и перевод к ней
-if result:
-    cheak_input(song_name)
-
+main()
