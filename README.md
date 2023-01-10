@@ -1,4 +1,4 @@
-[test](https://github.com/br4d327/de_demo_app/actions/workflows/ci.yml/badge.svg)
+![test](https://github.com/br4d327/de_demo_app/actions/workflows/ci.yml/badge.svg)
 
 # de_demo_app
 Проект по дисциплине "Программная инженерия".
