@@ -13,6 +13,7 @@ def configure():
 def load_model():
     return pipeline("translation", model="Helsinki-NLP/opus-mt-en-ru")
 
+
 # translation pipe
 def predict(text):
     return pipe(text)[0]["translation_text"]
@@ -64,24 +65,22 @@ def cheak_input(input_str):
     else:
         st.error('Поле пустое')
         
-def main():
-    configure()
-    # genius init
-    genius = Genius(dotenv_load(os.getenv('TOKEN')))
 
-    # load model into pipeline
-    pipe = load_model()
 
-    print('Model ready')
+configure()
 
-    # site init
-    st.title('Перевод песен Genius')
-    song_name = st.text_input('Введите название песни с Genius')
-    result = st.button('Перевести')
-    #print(predict('grape'))
-    
-    # start 
-    if result:
-        cheak_input(song_name)
+# genius init
+genius = Genius(dotenv_load(os.getenv('TOKEN')))
 
-main()
+# load model into pipeline
+pipe = load_model()
+print('Model ready')
+
+# site init
+st.title('Перевод песен Genius')
+song_name = st.text_input('Введите название песни с Genius')
+result = st.button('Перевести')
+#print(predict('grape'))
+# start 
+if result:
+    cheak_input(song_name)
