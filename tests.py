@@ -10,7 +10,7 @@ def test_load_model():
     assert pipe.tokenizer.model_max_length == 512, '512'
 
 # Тест predict
-def test_predict(a, b):
+def test_predict():
     for key in dict_test.keys():
         assert main.predict(key) == dict_test[key]
 
