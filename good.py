@@ -80,7 +80,7 @@ print('Model ready')
 st.title('Перевод песен Genius')
 song_name = st.text_input('Введите название песни с Genius')
 result = st.button('Перевести')
-#print(predict('grape'))
+
 # start 
 if result:
     cheak_input(song_name)
