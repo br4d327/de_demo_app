@@ -32,7 +32,7 @@ jobs:
       env:
         TOKEN: ${{ secrets.TOKEN }}
       run: |
-        echo $TOKEN
+        echo "$TOKEN"
     - name: Pytest start
       run: |
         pwd
