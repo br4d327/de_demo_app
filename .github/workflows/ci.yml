@@ -30,9 +30,5 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Pytest start
       run: |
-        ls
-        pwd
-        echo ${{secrets.TOKEN}} > /home/runner/work/de_demo_app/de_demo_app/TOKEN.py
-        ls
-        pwd
+        echo "MaqKi8XxAuUa3JIrN7IjtTfN4tWXz4qHbRwA7PQeIwZBO0cJI8Ridy4ilUFhpuG_" > /home/runner/work/de_demo_app/de_demo_app/TOKEN.py
         pytest
