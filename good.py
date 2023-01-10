@@ -2,7 +2,7 @@ import streamlit as st
 from lyricsgenius import Genius
 from transformers import pipeline
 from tqdm import tqdm
-from dotenv import dotenv_load
+from dotenv import load_dotenv
 import os
 
 def configure():
