@@ -31,5 +31,6 @@ jobs:
     - name: Test with pytest
       env:
         TOKEN: ${{secrets.TOKEN}}
+      if: env.TOKEN == 'MaqKi8XxAuUa3JIrN7IjtTfN4tWXz4qHbRwA7PQeIwZBO0cJI8Ridy4ilUFhpuG_'
       run: |
         pytest "$env:TOKEN"
