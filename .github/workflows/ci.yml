@@ -16,7 +16,8 @@ jobs:
       run: |
         ls
         echo ${{secrets.TOKEN}} > /home/runner/work/de_demo_app/de_demo_app/TOKEN.py
-        cat TOKEN.py
+        ls
+        pwd
     - uses: actions/checkout@v2
     - name: Set up Python 3.7
       uses: actions/setup-python@v2
