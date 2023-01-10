@@ -32,4 +32,4 @@ jobs:
       env:
         TOKEN: ${{secrets.TOKEN}}
       run: |
-        pytest "$TOKEN"
+        pytest "$env:TOKEN"
