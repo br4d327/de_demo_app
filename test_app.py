@@ -1,4 +1,4 @@
-from good import load_model, predict
+from app import load_model, predict
 import pytest
 
 
